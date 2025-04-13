@@ -1,0 +1,131 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/Fonts/Classic-Font.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/startScreen.gd" type="Script" id=2]
+[ext_resource path="res://scene/TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/parallax/2 - Hills.png" type="Texture" id=4]
+[ext_resource path="res://assets/parallax/1 - Foreground_scenery.png" type="Texture" id=5]
+[ext_resource path="res://assets/parallax/5 - Sky_color.png" type="Texture" id=6]
+[ext_resource path="res://assets/parallax/4 - Cloud_cover_2.png" type="Texture" id=7]
+[ext_resource path="res://scene/PlayerMenu.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="startScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="bg" type="Node2D" parent="."]
+position = Vector2( -36, -34 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sky" type="Sprite" parent="bg"]
+position = Vector2( 198, 125 )
+scale = Vector2( 1.13194, 0.903846 )
+texture = ExtResource( 6 )
+
+[node name="cloud" type="Sprite" parent="bg"]
+position = Vector2( 200, 125 )
+scale = Vector2( 1.11111, 0.865385 )
+texture = ExtResource( 7 )
+
+[node name="hill" type="Sprite" parent="bg"]
+position = Vector2( 194.5, 112.25 )
+scale = Vector2( 1.11458, 1.01683 )
+texture = ExtResource( 4 )
+
+[node name="trees" type="Sprite" parent="bg"]
+position = Vector2( 196, 114.25 )
+scale = Vector2( 1.11111, 1.02644 )
+texture = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_top = -4.0
+margin_right = 5.0
+margin_bottom = -9.0
+color = Color( 0, 0, 0, 0.54902 )
+
+[node name="controls" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -20.0
+margin_right = 32.0
+margin_bottom = 23.0
+
+[node name="startBtn" type="Button" parent="controls"]
+margin_right = 64.0
+margin_bottom = 11.0
+theme = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.67451, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.301961, 0.00392157, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 6 )
+text = "Start"
+
+[node name="controlsBtn" type="Button" parent="controls"]
+margin_top = 15.0
+margin_right = 64.0
+margin_bottom = 26.0
+theme = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.67451, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.301961, 0.00392157, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 6 )
+text = "Controls"
+
+[node name="quitBtn" type="Button" parent="controls"]
+margin_top = 30.0
+margin_right = 64.0
+margin_bottom = 41.0
+theme = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.67451, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.301961, 0.00392157, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 6 )
+text = "Quit"
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 0, 45, 0, 1, 46, 0, 2, 47, 0, 458754, 22, 0, 458755, 23, 0, 458756, 24, 0, 524290, 25, 0, 524291, 26, 0, 524292, 27, 0, 589826, 25, 0, 589827, 26, 0, 589828, 27, 0, 655362, 25, 0, 655363, 26, 0, 655364, 27, 0, 720896, 22, 0, 720897, 23, 0, 720898, 23, 0, 720899, 23, 0, 720900, 23, 0, 720901, 23, 0, 720902, 23, 0, 720903, 23, 0, 720904, 23, 0, 720905, 23, 0, 720906, 23, 0, 720907, 23, 0, 720908, 23, 0, 720909, 23, 0, 720910, 23, 0, 720911, 23, 0, 720912, 23, 0, 720913, 23, 0, 720914, 23, 0, 720915, 24, 0 )
+
+[node name="PlayerMenu" parent="." instance=ExtResource( 8 )]
+position = Vector2( 53, 97 )
+
+[connection signal="pressed" from="controls/startBtn" to="." method="_on_startBtn_pressed"]
+[connection signal="pressed" from="controls/controlsBtn" to="." method="_on_controlsBtn_pressed"]
+[connection signal="pressed" from="controls/quitBtn" to="." method="_on_quitBtn_pressed"]

@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scene/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/startScreen.gd" type="Script" id=2]
+[ext_resource path="res://assets/Fonts/Classic-Font.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 53
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0 )
+
+[node name="startScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="controls" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.0
+margin_top = -59.0
+margin_right = 109.0
+margin_bottom = 57.0
+
+[node name="startBtn" type="Button" parent="controls"]
+margin_right = 216.0
+margin_bottom = 36.0
+focus_neighbour_top = NodePath("../quitBtn")
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.866667, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.537255, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
+text = "Start"
+
+[node name="controlsBtn" type="Button" parent="controls"]
+margin_top = 40.0
+margin_right = 216.0
+margin_bottom = 76.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.866667, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.537255, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
+text = "Controls"
+
+[node name="quitBtn" type="Button" parent="controls"]
+margin_top = 80.0
+margin_right = 216.0
+margin_bottom = 116.0
+focus_neighbour_bottom = NodePath("../startBtn")
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.866667, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.537255, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
+text = "Quit"
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 12, 0, 1, 17, 0, 2, 17, 0, 3, 17, 0, 4, 17, 0, 5, 17, 0, 6, 17, 0, 7, 17, 0, 8, 17, 0, 9, 17, 0, 10, 17, 0, 11, 17, 0, 12, 17, 0, 13, 17, 0, 14, 17, 0, 15, 17, 0, 16, 17, 0, 17, 17, 0, 18, 17, 0, 19, 17, 0, 20, 17, 0, 21, 17, 0, 22, 17, 0, 23, 17, 0, 24, 17, 0, 25, 17, 0, 26, 17, 0, 27, 17, 0, 28, 17, 0, 29, 17, 0, 30, 17, 0, 31, 17, 0, 32, 17, 0, 33, 17, 0, 34, 17, 0, 35, 17, 0, 36, 17, 0, 37, 17, 0, 38, 17, 0, 39, 17, 0, 40, 17, 0, 41, 17, 0, 42, 17, 0, 43, 17, 0, 44, 17, 0, 45, 17, 0, 46, 17, 0, 47, 17, 0, 48, 17, 0, 49, 17, 0, 50, 17, 0, 51, 17, 0, 52, 17, 0, 53, 17, 0, 54, 17, 0, 55, 17, 0, 56, 17, 0, 57, 17, 0, 58, 17, 0, 59, 17, 0, 60, 17, 0, 61, 17, 0, 62, 17, 0, 63, 16, 0, 65536, 15, 0, 65599, 13, 0, 131072, 15, 0, 131135, 13, 0, 196608, 15, 0, 196671, 13, 0, 262144, 15, 0, 262207, 13, 0, 327680, 15, 0, 327743, 13, 0, 393216, 15, 0, 393279, 13, 0, 458752, 15, 0, 458815, 13, 0, 524288, 15, 0, 524351, 13, 0, 589824, 15, 0, 589887, 13, 0, 655360, 15, 0, 655423, 13, 0, 720896, 15, 0, 720959, 13, 0, 786432, 15, 0, 786495, 13, 0, 851968, 15, 0, 852031, 13, 0, 917504, 15, 0, 917567, 13, 0, 983040, 15, 0, 983103, 13, 0, 1048576, 15, 0, 1048639, 13, 0, 1114112, 15, 0, 1114175, 13, 0, 1179648, 15, 0, 1179711, 13, 0, 1245184, 15, 0, 1245247, 13, 0, 1310720, 15, 0, 1310783, 13, 0, 1376256, 15, 0, 1376319, 13, 0, 1441792, 15, 0, 1441855, 13, 0, 1507328, 15, 0, 1507391, 13, 0, 1572864, 15, 0, 1572927, 13, 0, 1638400, 15, 0, 1638463, 13, 0, 1703936, 15, 0, 1703999, 13, 0, 1769472, 15, 0, 1769535, 13, 0, 1835008, 15, 0, 1835071, 13, 0, 1900544, 15, 0, 1900607, 13, 0, 1966080, 15, 0, 1966143, 13, 0, 2031616, 15, 0, 2031679, 13, 0, 2097152, 15, 0, 2097215, 13, 0, 2162688, 15, 0, 2162751, 13, 0, 2228224, 15, 0, 2228287, 13, 0, 2293760, 15, 0, 2293823, 13, 0, 2359296, 15, 0, 2359359, 13, 0, 2424832, 18, 0, 2424833, 11, 0, 2424834, 11, 0, 2424835, 11, 0, 2424836, 11, 0, 2424837, 11, 0, 2424838, 11, 0, 2424839, 11, 0, 2424840, 11, 0, 2424841, 11, 0, 2424842, 11, 0, 2424843, 11, 0, 2424844, 11, 0, 2424845, 11, 0, 2424846, 11, 0, 2424847, 11, 0, 2424848, 11, 0, 2424849, 11, 0, 2424850, 11, 0, 2424851, 11, 0, 2424852, 11, 0, 2424853, 11, 0, 2424854, 11, 0, 2424855, 11, 0, 2424856, 11, 0, 2424857, 11, 0, 2424858, 11, 0, 2424859, 11, 0, 2424860, 11, 0, 2424861, 11, 0, 2424862, 11, 0, 2424863, 11, 0, 2424864, 11, 0, 2424865, 11, 0, 2424866, 11, 0, 2424867, 11, 0, 2424868, 11, 0, 2424869, 11, 0, 2424870, 11, 0, 2424871, 11, 0, 2424872, 11, 0, 2424873, 11, 0, 2424874, 11, 0, 2424875, 11, 0, 2424876, 11, 0, 2424877, 11, 0, 2424878, 11, 0, 2424879, 11, 0, 2424880, 11, 0, 2424881, 11, 0, 2424882, 11, 0, 2424883, 11, 0, 2424884, 11, 0, 2424885, 11, 0, 2424886, 11, 0, 2424887, 11, 0, 2424888, 11, 0, 2424889, 11, 0, 2424890, 11, 0, 2424891, 11, 0, 2424892, 11, 0, 2424893, 11, 0, 2424894, 11, 0, 2424895, 16, 0 )
